@@ -7,7 +7,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-Ball::Ball(Board& in_board, const sf::Vector2f& initial_position) : position(initial_position)
+Ball::Ball(Board& in_board, const sf::Vector2f& initial_position) : position(initial_position), IsGameOver(false)
 {
 	SetEnabled(true);
 
@@ -80,4 +80,40 @@ eDirectionType Ball::GetCurrentDirection() const
 std::shared_ptr<sf::CircleShape> Ball::GetShape() const
 {
 	return this->ball_shape;
+}
+
+void Ball::SetOwner(std::shared_ptr<Paddle> owner)
+{
+	this->owner = owner;
+}
+
+std::shared_ptr<Paddle> Ball::GetOwner() const
+{
+	return this->owner;
+}
+
+void Ball::SetGameOver(bool value)
+{
+	this->IsGameOver = value;
+}
+
+bool Ball::GetGameOver() const
+{
+	return this->IsGameOver;
+}
+
+void Ball::Reset()
+{
+	GameManager& gm = GameManager::Get();
+
+	unsigned int screen_size_x = gm.GetWindowHandle()->getSize().x;
+	unsigned int screen_size_y = gm.GetWindowHandle()->getSize().y;
+
+	// Reset to default
+	this->position = sf::Vector2f((screen_size_x / 2) - this->ball_shape->getRadius() / 2, (screen_size_y / 2) - this->ball_shape->getRadius() / 2);
+	this->ball_shape->setPosition(this->position);
+	this->current_direction = eDirectionType::NONE;
+	this->IsGameOver = false;
+	this->owner = nullptr;
+	this->current_heading = sf::Vector2f();
 }

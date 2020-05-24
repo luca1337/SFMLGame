@@ -41,8 +41,8 @@ public:
 		std::vector<sf::Keyboard::Key> right_paddle_keymaps = { sf::Keyboard::Up, sf::Keyboard::Down };
 
 		this->board.paddles = std::array<std::shared_ptr<Paddle>, 2>();
-		this->board.paddles[0] = std::make_shared<Paddle>(left_paddle_pos, left_paddle_keymaps);
-		this->board.paddles[1] = std::make_shared<Paddle>(right_paddle_pos, right_paddle_keymaps);
+		this->board.paddles[0] = std::make_shared<Paddle>("Left Paddle", left_paddle_pos, left_paddle_keymaps);
+		this->board.paddles[1] = std::make_shared<Paddle>("Right Paddle", right_paddle_pos, right_paddle_keymaps);
 
 		// Walls: Upper, Bottom
 		this->board.bounds = std::array<std::shared_ptr<Bound>, 2>();

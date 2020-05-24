@@ -4,6 +4,7 @@
 #include "IRenderable.h"
 
 #include <vector>
+#include <string>
 
 #include <SFML/System/Vector2.hpp>
 
@@ -13,15 +14,17 @@ class Paddle :
 	public IUpdatable
 {
 public:
-	Paddle(const sf::Vector2f& initial_position, std::vector<sf::Keyboard::Key> in_keys);
+	Paddle(std::string in_tag, const sf::Vector2f& initial_position, std::vector<sf::Keyboard::Key> in_keys);
 	virtual void Update(float delta_seconds) override;
 	virtual void Render(std::shared_ptr<sf::RenderWindow> window) override;
 	virtual void SetEnabled(bool value) override;
 	virtual bool GetEnabled() const override;
+	std::string GetNameTag() const;
 	std::shared_ptr<sf::RectangleShape> GetShape() const;
 private:
 	bool IsEnabled;
 	std::shared_ptr<sf::RectangleShape> paddle_shape;
 	sf::Vector2f paddle_position;
 	std::vector<sf::Keyboard::Key> keys;
+	std::string name_tag;
 };

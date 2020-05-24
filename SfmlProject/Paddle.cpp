@@ -1,7 +1,8 @@
 #include "Paddle.h"
 #include <glm.hpp>
 
-Paddle::Paddle(const sf::Vector2f & initial_position, std::vector<sf::Keyboard::Key> in_keys) : keys(in_keys)
+
+Paddle::Paddle(std::string in_tag, const sf::Vector2f & initial_position, std::vector<sf::Keyboard::Key> in_keys)
 {
 	this->SetEnabled(true);
 
@@ -9,6 +10,9 @@ Paddle::Paddle(const sf::Vector2f & initial_position, std::vector<sf::Keyboard::
 	this->paddle_shape = std::make_shared<sf::RectangleShape>(sf::Vector2f(10.0f, 50.0f));
 	this->paddle_shape->setFillColor(sf::Color::White);
 	this->paddle_shape->setPosition(initial_position);
+
+	this->keys = in_keys;
+	this->name_tag = in_tag;
 }
 
 void Paddle::Update(float delta_seconds)
@@ -17,12 +21,12 @@ void Paddle::Update(float delta_seconds)
 
 	if (sf::Keyboard::isKeyPressed(this->keys[0])) // up
 	{
-		clamped_movement += glm::vec2(0, -1) * 150.0f * delta_seconds;
+		clamped_movement += glm::vec2(0, -1) * 400.0f * delta_seconds;
 	}
 	
 	if (sf::Keyboard::isKeyPressed(this->keys[1])) // down
 	{
-		clamped_movement += glm::vec2(0, 1) * 150.0f * delta_seconds;
+		clamped_movement += glm::vec2(0, 1) * 400.0f * delta_seconds;
 	}
 
 	// Update old position with clamped one
@@ -43,6 +47,11 @@ void Paddle::SetEnabled(bool value)
 bool Paddle::GetEnabled() const
 {
 	return this->IsEnabled;
+}
+
+std::string Paddle::GetNameTag() const
+{
+	return this->name_tag;
 }
 
 std::shared_ptr<sf::RectangleShape> Paddle::GetShape() const

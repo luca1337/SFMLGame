@@ -10,6 +10,7 @@ class Board;
 class BallStateMove;
 class BallStateSelectDirection;
 class IState;
+class Paddle;
 
 /*Directions*/
 enum eDirectionType {
@@ -35,13 +36,18 @@ public:
 	void SetRandomDirection();
 	sf::Vector2f current_heading;
 	eDirectionType GetCurrentDirection() const;
-
 	std::shared_ptr<sf::CircleShape> GetShape() const;
+	void SetOwner(std::shared_ptr<Paddle> owner);
+	std::shared_ptr<Paddle> GetOwner() const;
+	void SetGameOver(bool value);
+	bool GetGameOver() const;
 
 private:
+	void Reset();
 	bool IsEnabled;
+	bool IsGameOver;
 	sf::Vector2f position;
-	const float ball_radius = 10.0f;
+	const float ball_radius = 5.0f;
 	std::shared_ptr<sf::CircleShape> ball_shape;
 
 	/*FSM*/
@@ -50,5 +56,9 @@ private:
 	std::shared_ptr<IState> current_state;
 
 	eDirectionType current_direction;
+	std::shared_ptr<Paddle> owner;
+
+	friend class BallStateMove;
+	friend class BallStateSelectDirection;
 };
 

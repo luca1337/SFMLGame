@@ -12,6 +12,7 @@ public:
 
 	virtual void OnStateEnter() override
 	{
+		std::cout << "entered here" << std::endl;
 	}
 
 	virtual std::shared_ptr<IState> OnStateUpdate(float delta_seconds) override
