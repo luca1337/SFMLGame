@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="File di origine">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="File di intestazione">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="File di risorse">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="File di intestazione\Game">
+      <UniqueIdentifier>{1fa8ba64-3125-4241-a56d-db3f33991082}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="File di origine\Game">
+      <UniqueIdentifier>{b19aca24-d9f5-4362-8baf-91e7e78775a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="File di origine\Game\Board">
+      <UniqueIdentifier>{7d7dcbad-6909-4a8b-86d8-c661f1a55034}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="File di intestazione\Game\Board">
+      <UniqueIdentifier>{f13a7a08-ff19-406d-9a78-4c39d59bf7aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="File di intestazione\Game\Ball">
+      <UniqueIdentifier>{62d7a9f3-bf8c-497a-9263-8e688e08980b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="File di origine\Game\Ball">
+      <UniqueIdentifier>{2b0a6af4-31aa-43c3-a6e8-7de2d828727d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="File di intestazione\GameStates">
+      <UniqueIdentifier>{73044d27-60ba-4b10-a5de-28221a59e1f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="File di intestazione\Game\Paddle">
+      <UniqueIdentifier>{3490c406-61dc-4f98-8402-9a6b8966ae5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="File di origine\Game\Paddle">
+      <UniqueIdentifier>{621cdab7-791e-4cdf-a9d0-439c95341498}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="File di intestazione\Game\Bounds">
+      <UniqueIdentifier>{ec49b21c-427b-4767-a9f4-91b11bce5e7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="File di origine\Game\Bound">
+      <UniqueIdentifier>{dc7e564e-96ed-4810-a11b-4fa66256eb4a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="GameManager.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="Board.cpp">
+      <Filter>File di origine\Game\Board</Filter>
+    </ClCompile>
+    <ClCompile Include="Ball.cpp">
+      <Filter>File di origine\Game\Ball</Filter>
+    </ClCompile>
+    <ClCompile Include="Paddle.cpp">
+      <Filter>File di origine\Game\Paddle</Filter>
+    </ClCompile>
+    <ClCompile Include="Bound.cpp">
+      <Filter>File di origine\Game\Bound</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="IUpdatable.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="IRenderable.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="IEntity.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="GameManager.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="IState.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
+    <ClInclude Include="Board.h">
+      <Filter>File di intestazione\Game\Board</Filter>
+    </ClInclude>
+    <ClInclude Include="Ball.h">
+      <Filter>File di intestazione\Game\Ball</Filter>
+    </ClInclude>
+    <ClInclude Include="BallStateMove.h">
+      <Filter>File di intestazione\Game\Ball</Filter>
+    </ClInclude>
+    <ClInclude Include="StateSetup.h">
+      <Filter>File di intestazione\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="StatePlay.h">
+      <Filter>File di intestazione\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="StateGameOver.h">
+      <Filter>File di intestazione\GameStates</Filter>
+    </ClInclude>
+    <ClInclude Include="BoardStateSetup.h">
+      <Filter>File di intestazione\Game\Board</Filter>
+    </ClInclude>
+    <ClInclude Include="BoardStatePlay.h">
+      <Filter>File di intestazione\Game\Board</Filter>
+    </ClInclude>
+    <ClInclude Include="BoardStateGameOver.h">
+      <Filter>File di intestazione\Game\Board</Filter>
+    </ClInclude>
+    <ClInclude Include="Paddle.h">
+      <Filter>File di intestazione\Game\Paddle</Filter>
+    </ClInclude>
+    <ClInclude Include="BallStateSelectDirection.h">
+      <Filter>File di intestazione\Game\Ball</Filter>
+    </ClInclude>
+    <ClInclude Include="Bound.h">
+      <Filter>File di intestazione\Game\Bounds</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
