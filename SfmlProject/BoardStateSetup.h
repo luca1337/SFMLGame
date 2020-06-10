@@ -46,8 +46,8 @@ public:
 
 		// Walls: Upper, Bottom
 		this->board.bounds = std::array<std::shared_ptr<Bound>, 2>();
-		this->board.bounds[0] = std::make_shared<Bound>(sf::Vector2f(screen_size_x, 5.0f), sf::Vector2f(0.0f, 0.0f), sf::Color::Red);
-		this->board.bounds[1] = std::make_shared<Bound>(sf::Vector2f(screen_size_x, 5.0f), sf::Vector2f(0.0f, screen_size_y - 5.0f), sf::Color::Green);
+		this->board.bounds[0] = std::make_shared<Bound>(sf::Vector2f(screen_size_x, 5.0f), sf::Vector2f(0.0f, 0.0f));
+		this->board.bounds[1] = std::make_shared<Bound>(sf::Vector2f(screen_size_x, 5.0f), sf::Vector2f(0.0f, screen_size_y - 5.0f));
 
 		gm.Add(this->board.ball);
 		gm.Add(this->board.paddles[0]);

@@ -66,6 +66,9 @@
     <ClCompile Include="Bound.cpp">
       <Filter>File di origine\Game\Bound</Filter>
     </ClCompile>
+    <ClCompile Include="SoundManager.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IUpdatable.h">
@@ -118,6 +121,9 @@
     </ClInclude>
     <ClInclude Include="Bound.h">
       <Filter>File di intestazione\Game\Bounds</Filter>
+    </ClInclude>
+    <ClInclude Include="SoundManager.h">
+      <Filter>File di intestazione</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

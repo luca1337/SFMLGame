@@ -154,6 +154,7 @@
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Paddle.cpp" />
+    <ClCompile Include="SoundManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Ball.h" />
@@ -163,6 +164,7 @@
     <ClInclude Include="BoardStatePlay.h" />
     <ClInclude Include="BoardStateSetup.h" />
     <ClInclude Include="Bound.h" />
+    <ClInclude Include="SoundManager.h" />
     <ClInclude Include="StateGameOver.h" />
     <ClInclude Include="StatePlay.h" />
     <ClInclude Include="StateSetup.h" />

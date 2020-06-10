@@ -2,6 +2,8 @@
 
 #include "IState.h"
 #include "Board.h"
+#include "SoundManager.h"
+
 #include <glm.hpp>
 #include <Windows.h>
 
@@ -40,6 +42,7 @@ public:
 
 				// Assign owner to the ball so that we know who is the actual player that can win
 				this->board.ball->SetOwner(this->board.paddles[i]);
+				SoundManager::Get().GetSound(eSoundType::PADDLE_BOUNCE)->play();
 			}
 		}
 
@@ -61,13 +64,14 @@ public:
 					reflected = glm::reflect(glm::vec2(x, y), glm::vec2(0, -1));
 
 				this->board.ball->current_heading = sf::Vector2f(reflected.x, reflected.y);
+				SoundManager::Get().GetSound(eSoundType::WALL_BOUNCE)->play();
 			}
 		}
 
 		// Check in which part of the screen the ball goes off: win, losses and draw conditions
 
 		// 1) Left screen 
-		if (this->board.ball->GetShape()->getPosition().x + this->board.ball->GetShape()->getScale().x < 0 || this->board.ball->GetShape()->getPosition().x > 800)
+		if (this->board.ball->GetShape()->getPosition().x + this->board.ball->GetShape()->getRadius() < -5 || this->board.ball->GetShape()->getPosition().x > 800)
 		{
 			if (!this->board.ball->GetOwner())
 			{

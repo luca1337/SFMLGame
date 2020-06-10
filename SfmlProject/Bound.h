@@ -11,7 +11,6 @@ public:
 	virtual void SetEnabled(bool value) override;
 	virtual bool GetEnabled() const override;
 	std::shared_ptr<sf::RectangleShape> GetShape() const;
-
 private:
 	bool IsEnabled;
 	std::shared_ptr<sf::RectangleShape> bound_shape;

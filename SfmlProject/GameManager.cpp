@@ -5,6 +5,7 @@
 #include "StateSetup.h"
 #include "StatePlay.h"
 #include "StateGameOver.h"
+#include "SoundManager.h"
 
 //unabsrtraction entity includes
 #include "Board.h"
@@ -29,6 +30,10 @@ void GameManager::Init(unsigned int width, unsigned int height, const std::strin
 	/*Init Entities*/
 	board = std::make_shared<Board>();
 	this->Add(board);
+
+	SoundManager& sm = SoundManager::Get();
+	sm.Register(eSoundType::PADDLE_BOUNCE, "paddle.wav");
+	sm.Register(eSoundType::WALL_BOUNCE, "wall.wav");
 }
 
 void GameManager::Run()
